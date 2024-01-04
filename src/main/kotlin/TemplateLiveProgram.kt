@@ -1,22 +1,24 @@
+import org.openrndr.MouseCursorHideMode
 import org.openrndr.application
-import org.openrndr.color.ColorRGBa
+import org.openrndr.extra.olive.OliveScriptHost
 import org.openrndr.extra.olive.oliveProgram
 
 /**
- *  This is a template for a live program.
- *
- *  It uses oliveProgram {} instead of program {}. All code inside the
- *  oliveProgram {} can be changed while the program is running.
+ *   XX - Title
  */
 
 fun main() = application {
     configure {
-        width = 800
-        height = 800
+        width = 1080
+        height = 1080
+        windowAlwaysOnTop = true
+        cursorHideMode = MouseCursorHideMode.HIDE
     }
-    oliveProgram {
+    oliveProgram(scriptHost = OliveScriptHost.JSR223) {
+
         extend {
-            drawer.clear(ColorRGBa.PINK)
+
+
         }
     }
 }
